@@ -1,0 +1,13 @@
+Query the Euclidean Distance between points  and  and format your answer to display  decimal digits.
+
+___________________
+
+Answer 184.1616
+
+SQL
+
+SELECT CONVERT(DECIMAL(18,4),SQRT((A-B)*(A-B)+(C-D)*(C-D))) 
+FROM (
+    SELECT MIN(LAT_N) AS A , MAX(LAT_N) AS B , MIN(LONG_W) AS C , MAX(LONG_W) AS D
+    FROM STATION
+    ) AS X;
